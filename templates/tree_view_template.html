@@ -1,0 +1,11 @@
+<li> <a href="{{item.get_absolute_url}}">{{item}}</a>
+    {%if item.is_open %}
+        <ul>
+         {%for ch in item.children_as_list %}
+              {%with item=ch template_name="tree_view_template.html" %}
+                   {%include template_name%}
+              {%endwith%}
+         {%endfor%}
+         </ul>
+    {%endif%}
+</li>

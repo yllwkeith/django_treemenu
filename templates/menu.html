@@ -1,0 +1,6 @@
+<ul>
+    {% if error %} {{error}} {% endif %}
+    {%for item in menu_items %}
+        {%include "tree_view_template.html" %}
+    {%endfor%}
+</ul>
